@@ -50,10 +50,12 @@ while True:
             print(letrasEscolhidas)
 
             sleep(5)
-            system('cls') or None
+          
 
         else:
             print('Que pena, você errou:(')
+            print('Diquinha: a palavra tem',len(palavra),'letras')
+            print(estadoAtual)
             erros = erros + 1
             sleep(5)
             system('cls') or None
