@@ -9,8 +9,8 @@ def inicio():
     print('Seu objetivo é tentar acertar a palavra secreta')
     print('Você terá que tentar uma letra por vez')
     print('Caso você acerte, a letra será colocada na palavra para que você chegue mais perto de acertar')
-    print('você pode errar 5 vezes')
-    print('o tema das palavras é programação')
+    print('Você pode errar 5 vezes')
+    print('O tema das palavras é programação')
     sleep(3)
 
 def main():
@@ -26,7 +26,7 @@ def main():
         if (tema == '1'):
             palavras = ['ALGORITMOS', 'PYTHON', 'HTML']
 
-            dica1 = 'é a primeira matéria do curso relacionada a programção'
+            dica1 = 'é a primeira matéria do curso relacionada a programação'
             dica2 = 'é uma liguagem orientada a objetos'
             dica3 = 'é uma linguagem de marcação'
             break
@@ -35,20 +35,20 @@ def main():
             palavras = ['MARACUJA', 'PITAYA', 'KIWI']
 
             dica1 = 'é uma delícia em doces'
-            dica2 = 'é uma fruta sem sabor'
-            dica3 = 'é verde e com pontinhos'
+            dica2 = 'a fruta de um animal mitológico'
+            dica3 = 'é verde e tem pontinhos'
             break
 
         elif (tema == '3'):
             palavras = ['FRIENDS', 'BRIDGERTON', 'MANIFEST']
 
             dica1 = 'bebem muito café'
-            dica2 = 'serie de época'
+            dica2 = 'serie de época com orquestra pop'
             dica3 = 'voo 828'
             break
 
         else:
-            print('número inválido')
+            print('número inválido, tente novamente (:')
 
     palavra = choice(palavras)
 
@@ -84,15 +84,15 @@ def main():
                 print('Você acertou!, a palavra ficou assim:')
                 print(estadoAtual)
                 print('')
-                print('vc errou', erros, 'vezes. E já usou essas letras:')
+                print('ATENÇÃO!! vc errou', erros, 'vezes. E já usou essas letras:')
                 print(letrasEscolhidas)
 
             else:
-                print('Que pena, você errou:(')
-                if (erros <= 2):
+                print('Que pena, você errou :(')
+                if (erros == 1):
                     print('Diquinha: a palavra tem',len(palavra),'letras')
                 elif(erros > 2):
-                    print('toma uma dica:',dica)
+                    print('toma uma dica:', dica)
                 print(estadoAtual)
                 erros = erros + 1
 
@@ -105,7 +105,7 @@ def main():
             if (palavra == str):
                 print('')
                 print('Você ganhou!!!')
-                print('a palavra foi:', str)
+                print('a palavra era:', str)
                 break
 
             if (erros == 5):
