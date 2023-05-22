@@ -1,26 +1,35 @@
+from time import sleep
+from os import system
+
 #Mostra regras no inicio ao usuario
 def inicio():
+    from os import system
     from time import sleep
     print('=======================')
     print('   FORCA DE PALAVRAS   ')
     print('=======================')
     print('Seu objetivo é tentar acertar a palavra secreta')
     print('Você terá que tentar uma letra por vez')
-    print('Você pode errar 5 vezes')
-    print('para sair digite a qualquer momento "sair"')
+    print('Você pode errar até 5 vezes')
+    print('para sair, digite a qualquer momento "sair"')
     sleep(3)
+    system('cls') or None
 
 #define o tema da forca
 def escolher_tema():
+    from os import system
+    from time import sleep
     global palavras, dica0, dica1, dica2 #define variáveis vo escopo do código 
     
     while True:#enquanto for verdade (loop infinito)
-        tema  = input(''' agora escolha o tema que você deseja jogar: 
+        tema  = input(''' agora, escolha o tema que você deseja jogar: 
                         [1] programação
                         [2] frutas
-                        [3] series
+                        [3] séries
                         ''') #pergunta qual tema o usuário deseja jogar na forca 
-
+        sleep(3)
+        system('cls') or None
+        
         if (tema == '1'): #se o usuario digitar '1'
             palavras = ['ALGORITMOS', 'PYTHON', 'HTML'] #define as palavras que podem ser escolhidas 
 
@@ -33,10 +42,10 @@ def escolher_tema():
             break #para o loop
         
         elif (tema == '2'): #se o usuario digitar '2'
-            palavras = ['MARACUJA', 'PITAYA', 'KIWI'] #define as palavras que podem ser escolhidas
+            palavras = ['MARACUJÁ', 'PITAYA', 'KIWI'] #define as palavras que podem ser escolhidas
 
-            dica0 = 'é uma delícia em doces' #define dica para palavra 0
-            dica1 = 'a fruta de um animal mitológico' #define dica para palavra 1 
+            dica0 = 'é uma delícia no mousse' #define dica para palavra 0
+            dica1 = 'a fruta do dragão' #define dica para palavra 1 
             dica2 = 'é verde e tem pontinhos' #define dica para palavra 2
 
             return palavras, dica0, dica1, dica2 #retorna variaveis ao escopo 
@@ -47,7 +56,7 @@ def escolher_tema():
             palavras = ['FRIENDS', 'BRIDGERTON', 'MANIFEST'] #define as palavras que podem ser escolhidas
 
             dica0 = 'bebem muito café' #define dica para palavra 0
-            dica1 = 'serie de época com orquestra pop' #define dica para palavra 1
+            dica1 = 'série de época com orquestra pop' #define dica para palavra 1
             dica2 = 'voo 828' #define dica para palavra 2
 
             return palavras, dica0, dica1, dica2 #retorna variaveis ao escopo
@@ -56,7 +65,7 @@ def escolher_tema():
 
         else: # se a opção digitada não for 1, 2 ou 3
             print('número inválido, tente novamente (:') #manda o usuario tentar novamente e não para o loop
-
+  
 #escolhe a palavra a ser trabalhada na forca
 def escolher_palavra():
     from random import randint #importa do random o comando randint
@@ -89,7 +98,7 @@ def analiza_letra():
         elif (letra not in palavra):
             print(f'{letra} não faz parte da palavra')
             if erros < 2:
-                print(f'dica: a palavra {len(palavra)} letras')
+                print(f'dica: a palavra tem {len(palavra)} letras')
             elif erros == 3 or erros == 4:
                 print('toma mais uma dica:',dica)
             erros += 1
@@ -97,7 +106,7 @@ def analiza_letra():
     elif(letra == 'SAIR'):
         erros = 2007
     else:
-        print('carácter inválido tente novamente')
+        print('carácter inválido, tente novamente')
 
     
     return letras_escolhidas, erros,
@@ -122,7 +131,7 @@ escolher_tema()
 
 escolher_palavra()
 
-print(palavra)
+#print(palavra) #apenas para testes 
 
 estadoAtual = ['_']*len(palavra)
 letras_escolhidas = []
@@ -141,11 +150,14 @@ while True:
     letras_escolhidas.append(letra)
     
     if (verifica_acerto(estadoAtual)):
-        print('parabéns vc acertou!!!')
+        print('parabéns, vc acertou!!!')
         break
     elif (erros == 5):
         print('vc perdeu:(')
         break
     elif (erros == 2007):
-        print ('até mais')
+        print ('até mais!!!')
         break
+
+    sleep(3)
+    system('cls') or None
