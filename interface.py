@@ -1,37 +1,58 @@
 import turtle
 turtle = turtle.Turtle()
-turtle.speed(1) 
+main = turtle.screen
+escritor = turtle.clone()
+turtle.speed(0) 
 
-#posiciona tartaruga
-turtle.pu()
-turtle.goto(-212.13,212.13)
-turtle.right(-90)
-turtle.fd(50)
-turtle.pd()
+estado = ['cyntia de boas', 'ornã surtando']
 
-#desenha forca
-turtle.fd(25)
-turtle.right(-90)
-turtle.fd(100)
-turtle.left(90)
-turtle.fd(250)
+def forca():
+    global turtle
+    #posiciona tartaruga
+    turtle.pu()
+    turtle.goto(-212.13,212.13)
+    turtle.right(-90)
+    turtle.fd(50)
+    turtle.pd()
 
-#posiciona tartaruga
-turtle.pu()
-turtle.goto(-212.13,212.13)
-turtle.left(90)
-turtle.pd()
-#desenha cabeça
-turtle.circle(25)
+    #desenha forca
+    turtle.fd(25)
+    turtle.right(-90)
+    turtle.fd(100)
+    turtle.left(90)
+    turtle.fd(250)
+def cabeca():
+    global turtle
+    #posiciona tartaruga
+    turtle.pu()
+    turtle.goto(-212.13,212.13)
+    turtle.left(90)
+    turtle.pd()
+    #desenha cabeça
+    turtle.circle(25)
 
-#desenha os braços
-turtle.right(45)
-turtle.fd(50)
-turtle.pu()
-turtle.backward(50)
-turtle.pd()
-turtle.right(90)
-turtle.fd(50)
+def braco1():
+    global turtle
+    turtle.goto(-212.13,212.13)
+    #desenha os braços
+    turtle.right(45)
+    turtle.fd(50)
+    turtle.pu()
+    turtle.backward(50)
+    turtle.pd()
+
+def braco2():
+    global turtle
+    
+    turtle.right(90)
+    turtle.fd(50)
+
+forca()
+cabeca()
+braco1()
+braco2()
+
+
 
 #desenha o corpo
 turtle.pu()
@@ -48,6 +69,8 @@ turtle.pd()
 turtle.right(-90)
 turtle.fd(50)
 
-turtle.mainloop()
+escritor.write(estado, align ='left')
+
+main.mainloop()
 
 
