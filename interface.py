@@ -4,7 +4,8 @@ main = turtle.screen
 escritor = turtle.clone()
 turtle.speed(0) 
 
-estado = ['cyntia de boas', 'ornã surtando']
+estado = ['cyntia de boas', 'ornã surtando'] and ['ornã foi embora, cynthia no comando']
+
 
 def forca():
     global turtle
@@ -21,6 +22,7 @@ def forca():
     turtle.fd(100)
     turtle.left(90)
     turtle.fd(250)
+
 def cabeca():
     global turtle
     #posiciona tartaruga
@@ -47,27 +49,33 @@ def braco2():
     turtle.right(90)
     turtle.fd(50)
 
+def corpo():
+    #desenha o corpo 
+    global turtle
+    turtle.pu()
+    turtle.backward(50)
+    turtle.right(-45)
+    turtle.pd()
+    turtle.fd(100)
+
+def pernas():
+    global turtle
+    #desenha as pernas
+    turtle.right(45)
+    turtle.fd(50)
+    turtle.pu()
+    turtle.backward(50)
+    turtle.pd()
+    turtle.right(-90)
+    turtle.fd(50)
+
 forca()
 cabeca()
 braco1()
 braco2()
+corpo()
+pernas()
 
-
-
-#desenha o corpo
-turtle.pu()
-turtle.backward(50)
-turtle.right(-45)
-turtle.pd()
-turtle.fd(100)
-
-turtle.right(45)
-turtle.fd(50)
-turtle.pu()
-turtle.backward(50)
-turtle.pd()
-turtle.right(-90)
-turtle.fd(50)
 
 escritor.write(estado, align ='left')
 

@@ -34,7 +34,7 @@ def escolher_tema():
             palavras = ['ALGORITMOS', 'PYTHON', 'HTML'] #define as palavras que podem ser escolhidas 
 
             dica0 = 'é a primeira matéria do curso relacionada a programação'  #define dica para palavra 0
-            dica1 = 'é uma liguagem orientada a objetos'  #define dica para palavra 1
+            dica1 = 'é uma linguagem orientada a objetos'  #define dica para palavra 1
             dica2 = 'é uma linguagem de marcação' #define dica para palavra 2
 
             return palavras, dica0, dica1, dica2 #retorna variaveis ao escopo 
@@ -42,7 +42,7 @@ def escolher_tema():
             break #para o loop
         
         elif (tema == '2'): #se o usuario digitar '2'
-            palavras = ['MARACUJÁ', 'PITAYA', 'KIWI'] #define as palavras que podem ser escolhidas
+            palavras = ['MARACUJA', 'PITAYA', 'KIWI'] #define as palavras que podem ser escolhidas
 
             dica0 = 'é uma delícia no mousse' #define dica para palavra 0
             dica1 = 'a fruta do dragão' #define dica para palavra 1 
@@ -106,7 +106,7 @@ def analiza_letra():
     elif(letra == 'SAIR'):
         erros = 2007
     else:
-        print('carácter inválido, tente novamente')
+        print('caractere inválido, tente novamente')
 
     
     return letras_escolhidas, erros,
@@ -130,6 +130,7 @@ inicio()
 escolher_tema()
 
 escolher_palavra()
+
 
 #print(palavra) #apenas para testes 
 
